@@ -7,6 +7,3 @@ services:
 
 before_install:
   - docker build -t akshaybabar/docker-react -f docketfile.dev .
-  
-script:
-  - docker run akshaybabar/docker-react npm run test -- --coverage
