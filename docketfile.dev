@@ -2,6 +2,7 @@ FROM node:alpine
 WORKDIR /app
 COPY package.json .
 RUN npm install
+RUN yarn install
 RUN yarn upgrade jest --latest
 COPY . .
 CMD ["npm","run","start"]
