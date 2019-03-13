@@ -7,3 +7,18 @@ services:
 
 before_install:
   - docker build -t akshaybabar/docker-react -f docketfile.dev .
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "React-app"
+  env: "ReactApp-env"
+  bucket_name: "elasticbeanstalk-us-east-2-358819384619"
+  bucket_path: "React-app"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+ 
+
